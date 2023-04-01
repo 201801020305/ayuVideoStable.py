@@ -210,6 +210,7 @@ def video_stable(images_path, mask, max_pts, is_image_out, is_transform_out, tra
         # 对当前帧进行仿射变换
         image_stabilized = cv2.warpAffine(curr_image, m, (w, h))
         # 输出图片
+        cv2.imwrite("images_out/s_3000.bmp", first_image)
         cv2.imwrite("images_out/s_" + str(3001 + i) + ".bmp", image_stabilized)
         # 打印进度
         print("输出第" + str(i + 2) + "张图像")
